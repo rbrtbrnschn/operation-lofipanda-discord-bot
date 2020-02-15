@@ -2,7 +2,7 @@ const { RichEmbed } = require("discord.js");
 module.exports = {
   name: "say",
   category: "mod",
-  description: "wip",
+  description: "Simon Says.",
   run: async (client, msg, args) => {
     if (msg.deletable) msg.delete();
     if (args < 1)
