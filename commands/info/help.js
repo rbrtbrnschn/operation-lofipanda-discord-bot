@@ -29,7 +29,7 @@ module.exports = {
       }
     });
     commands.forEach((c, i) => {
-      desc += `**> ${c}:** ${descriptions[i]}
+      desc += `**> _${c}:** ${descriptions[i]}
       `;
     });
 
@@ -41,6 +41,11 @@ module.exports = {
       )
       .setFooter(member.displayName, member.user.displayAvatarURL)
       .setTimestamp()
+      .addField(
+        "Prefix",
+        stripIndents`**> Prefix: "_"** 
+      `
+      )
       .addField("Commands", stripIndents(desc), true);
     msg.channel.send(embed);
   }

@@ -10,6 +10,9 @@ client.aliases = new Collection();
 ["command"].forEach(handler => {
   require(`./handler/${handler}`)(client);
 });
+["exclusive"].forEach(handler => {
+  require(`./handler/${handler}`)(client);
+});
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`);

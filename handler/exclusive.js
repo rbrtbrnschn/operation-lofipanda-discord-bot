@@ -2,14 +2,14 @@ const { readdirSync } = require("fs");
 const ascii = require("ascii-table");
 
 module.exports = client => {
-  console.log("Commands:");
-  readdirSync("./commands/").forEach(dir => {
+  console.log("Exclusive Commands:");
+  readdirSync("./exclusives/").forEach(dir => {
     const table = new ascii().setHeading(dir, "Status");
-    const commands = readdirSync(`./commands/${dir}/`).filter(f =>
+    const commands = readdirSync(`./exclusives/${dir}/`).filter(f =>
       f.endsWith(".js")
     );
     for (let file of commands) {
-      let pull = require(`../commands/${dir}/${file}`);
+      let pull = require(`../exclusives/${dir}/${file}`);
 
       if (pull.name) {
         client.commands.set(pull.name, pull);
