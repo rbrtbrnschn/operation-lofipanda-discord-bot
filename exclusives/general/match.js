@@ -7,5 +7,6 @@ module.exports = {
   description: "Exclusive commands for exclusive people.",
   run: async (client, msg, args) => {
     msg.reply("tf");
+    // TODO: WIP / api endpoint, where you can search db for player,matches,user
   }
 };
